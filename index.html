@@ -179,6 +179,34 @@
       border: 2px solid var(--primary);
     }
 
+    /* App preview gallery */
+    .preview-section { background: linear-gradient(180deg, #f7f7fb 0%, #ede8ff 100%); }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 32px;
+    }
+    .shot {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(45, 11, 107, 0.18);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .shot:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(45, 11, 107, 0.28); }
+    .shot img { width: 100%; display: block; }
+    .shot .caption { padding: 14px 16px; font-size: 13px; font-weight: 700; color: var(--ink); }
+    .shot .caption small { display: block; font-weight: 500; color: var(--ink-soft); margin-top: 3px; font-size: 12px; }
+    .press-row {
+      display: flex; gap: 14px; flex-wrap: wrap; margin-top: 26px; align-items: center;
+    }
+    .press-row a {
+      background: var(--primary); color: white; padding: 11px 18px; border-radius: 12px;
+      font-weight: 700; font-size: 14px;
+    }
+    .press-row a:hover { text-decoration: none; opacity: 0.92; }
+
     footer {
       background: #0f172a;
       color: rgba(255,255,255,0.65);
@@ -243,6 +271,44 @@
     </div>
   </section>
 
+  <section class="preview-section">
+    <div class="container">
+      <div class="kicker">See it in action</div>
+      <h2>Five screens, zero clutter.</h2>
+      <p style="font-size:15px; color:var(--ink-soft); max-width:680px; margin-top:8px;">
+        Real screens from the iOS app — not mockups. Tap any image to view full-size.
+      </p>
+
+      <div class="gallery">
+        <a class="shot" href="screenshots/01-home.png" target="_blank" rel="noopener">
+          <img src="screenshots/01-home.png" alt="PillTime Home — Never miss a dose" />
+          <div class="caption">Never miss a dose<small>Home · next-dose timer · scan · speak · type</small></div>
+        </a>
+        <a class="shot" href="screenshots/02-scan.png" target="_blank" rel="noopener">
+          <img src="screenshots/02-scan.png" alt="PillTime Scan — Snap any bottle" />
+          <div class="caption">Snap any bottle<small>Multi-angle scan · privacy-first prompts</small></div>
+        </a>
+        <a class="shot" href="screenshots/03-info.png" target="_blank" rel="noopener">
+          <img src="screenshots/03-info.png" alt="PillTime Meds — Your meds, tracked" />
+          <div class="caption">Your meds, tracked<small>Adherence · pills-left · pronounce · savings</small></div>
+        </a>
+        <a class="shot" href="screenshots/04-about.png" target="_blank" rel="noopener">
+          <img src="screenshots/04-about.png" alt="PillTime About — The problem we're fixing" />
+          <div class="caption">The problem we're fixing<small>125K deaths · $300B cost · 50% miss doses · Zero PHI</small></div>
+        </a>
+        <a class="shot" href="screenshots/05-doctor.png" target="_blank" rel="noopener">
+          <img src="screenshots/05-doctor.png" alt="PillTime Doctor Visit — Hand your doctor your meds" />
+          <div class="caption">Hand your doctor your meds<small>Shareable summary · zero PHI · AirDrop/email/print</small></div>
+        </a>
+      </div>
+
+      <div class="press-row">
+        <a href="screenshots/PillTime-AppStore-Screenshots.zip" download>📦 Download press kit (all 5 PNGs, 2.2 MB)</a>
+        <a href="mailto:press@pilltime.app" class="secondary" style="background:transparent;border:2px solid var(--primary);color:var(--primary);">press@pilltime.app</a>
+      </div>
+    </div>
+  </section>
+
   <section style="background: white;">
     <div class="container">
       <div class="kicker">What's in the app</div>
@@ -253,6 +319,11 @@
           <span class="emoji">📷</span>
           <h3>Multi-angle bottle scanner</h3>
           <p>Curved-label aware. Takes 1–3 photos around the bottle, then asks the AI to reconcile the wrap-around text.</p>
+        </div>
+        <div class="feature">
+          <span class="emoji">🎤</span>
+          <h3>Say med + dose</h3>
+          <p>No camera? No problem. Tap the mic, speak the medication name and dosage out loud, and AI extracts everything — forgiving of mispronunciations.</p>
         </div>
         <div class="feature">
           <span class="emoji">🛡️</span>
@@ -347,6 +418,7 @@
             <li><a href="mailto:support@pilltime.app">support@pilltime.app</a></li>
             <li><a href="mailto:privacy@pilltime.app">privacy@pilltime.app</a></li>
             <li><a href="mailto:legal@pilltime.app">legal@pilltime.app</a></li>
+            <li><a href="mailto:press@pilltime.app">press@pilltime.app</a></li>
           </ul>
         </div>
       </div>
