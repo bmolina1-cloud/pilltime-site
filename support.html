@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — PillTime</title>
+  <meta name="description" content="Help, FAQs, and how to contact PillTime support." />
+  <link rel="stylesheet" href="_styles.css" />
+</head>
+<body>
+  <div class="hero">
+    <div class="container">
+      <a href="index.html" class="back">← PillTime</a>
+      <h1>Support</h1>
+      <p class="meta">Help, FAQs, and how to reach us.</p>
+    </div>
+  </div>
+
+  <article>
+    <div class="container">
+
+      <h2>Quick contact</h2>
+      <ul>
+        <li><strong>General help:</strong> <a href="mailto:support@pilltime.app">support@pilltime.app</a></li>
+        <li><strong>Privacy questions:</strong> <a href="mailto:privacy@pilltime.app">privacy@pilltime.app</a></li>
+        <li><strong>Legal / arbitration opt-out:</strong> <a href="mailto:legal@pilltime.app">legal@pilltime.app</a></li>
+        <li><strong>Health plan / partner inquiries:</strong> <a href="mailto:partners@pilltime.app">partners@pilltime.app</a></li>
+      </ul>
+
+      <h2>Frequently asked questions</h2>
+
+      <h2>Do I have to pay to use the scanner?</h2>
+      <p>No. PillTime defaults to <strong>Google Gemini's free tier</strong>. You get your own free API key at <a href="https://aistudio.google.com/app/apikey">aistudio.google.com/app/apikey</a> — no credit card required — and paste it into the App's Settings. That's it.</p>
+
+      <h2>Does PillTime see my medications or my health data?</h2>
+      <p>No. PillTime has no backend server. Your medications, schedule, and dose history live only on your device. When you scan a bottle, the photo goes directly from your phone to your chosen AI provider (Google or OpenAI) under your own API key — we are not in the middle of that connection.</p>
+
+      <h2>Does PillTime store my name or my doctor's name?</h2>
+      <p>No. The AI scanner is explicitly instructed to never extract your patient name, your prescribing clinician's name, your prescription number, or any insurance/plan information. If any of those fields slip through anyway, they are scrubbed on your device before they are written to storage. See the <a href="privacy.html">Privacy Policy</a> for the full data-flow description.</p>
+
+      <h2>Why does the camera tell me to "cover the patient name with my thumb"?</h2>
+      <p>Belt-and-suspenders privacy. The AI is told not to read your name, and we scrub it client-side if it does — but the best guarantee is that the name was never in the photo to begin with. Cover the patient-name line of the label with your thumb when you snap the bottle.</p>
+
+      <h2>The scanner read my drug wrong. What do I do?</h2>
+      <p>AI vision is not perfect, especially on curved bottles, faded labels, or partially obscured text. You have three options:</p>
+      <ul>
+        <li>Tap <strong>Rescan</strong> and take 2–3 photos in bright, even light, rotating the bottle a third of a turn between each shot.</li>
+        <li>Tap <strong>Edit</strong> to fix any field manually on the result screen.</li>
+        <li>Tap <strong>Type it in manually</strong> on the Home screen to skip the camera entirely.</li>
+      </ul>
+      <p>Always verify the drug name, strength, and frequency against your actual prescription label before saving.</p>
+
+      <h2>My reminder didn't fire. Why?</h2>
+      <p>Local notifications depend on your device's operating system, battery state, do-not-disturb settings, and notification permissions. Common causes:</p>
+      <ul>
+        <li>Notification permissions were denied for PillTime — check Settings → Notifications → PillTime.</li>
+        <li>The phone is in Do Not Disturb / Focus mode.</li>
+        <li>The phone was in low-power mode, which can delay scheduled notifications.</li>
+        <li>The app was force-quit (swiped away). On iOS, scheduled local notifications usually still fire after a force-quit, but Android behavior varies by manufacturer.</li>
+      </ul>
+      <p>For time-critical medications, always use independent safeguards (pill organizer, partner reminder, pharmacy auto-call) in addition to PillTime.</p>
+
+      <h2>How do I delete all of my data?</h2>
+      <p>Delete the app from your device. Because PillTime has no backend, that removes everything — there is no server-side copy to follow up on.</p>
+
+      <h2>Does PillTime work on Apple Watch?</h2>
+      <p>Yes. Your dose reminders automatically mirror to a paired Apple Watch, and you can tap <strong>✓ Taken</strong>, <strong>Snooze 10 min</strong>, or <strong>Skip</strong> right from your wrist — no need to open the app on your phone. A dedicated watchOS companion app is on the roadmap.</p>
+
+      <h2>Can I export my medication list for a doctor visit?</h2>
+      <p>Yes. Settings → Doctor Visit Summary generates a clean plain-text list of every medication you're taking, with your adherence numbers — no patient name, no prescriber name, no Rx numbers, no insurance. You can share it via AirDrop, Mail, Notes, Print, or save it to Files.</p>
+
+      <h2>How do I opt out of the arbitration clause?</h2>
+      <p>Within 30 days of first accepting the Terms, email <a href="mailto:legal@pilltime.app">legal@pilltime.app</a> with subject "Arbitration opt-out" and include your full name and the device on which you installed PillTime. See <a href="terms.html">Terms §14(d)</a> for the full opt-out language.</p>
+
+      <h2>I'm a health plan, PBM, or value-based-care group. Can we offer PillTime to our members?</h2>
+      <p>Yes — that's exactly who we built the privacy architecture for. Reach out at <a href="mailto:partners@pilltime.app">partners@pilltime.app</a>. We offer co-branding, member onboarding flows, and optional opt-in aggregate adherence reporting — all without ever touching PHI.</p>
+
+      <h2>I think I found a security issue.</h2>
+      <p>Please email <a href="mailto:security@pilltime.app">security@pilltime.app</a> with a description and (if applicable) reproduction steps. We will acknowledge within 5 business days.</p>
+    </div>
+  </article>
+
+  <footer>
+    © 2026 PillTime · <a href="index.html">Home</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="disclaimer.html">Disclaimer</a>
+  </footer>
+</body>
+</html>

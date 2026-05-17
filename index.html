@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PillTime — Built by doctors. For everyone who keeps forgetting.</title>
+  <meta name="description" content="A zero-PHI medication reminder app. Scan a bottle, get a reminder, never miss a dose. Built by physicians. Nothing leaves your phone." />
+  <meta property="og:title" content="PillTime" />
+  <meta property="og:description" content="Built by doctors. Zero PHI. Nothing leaves your phone." />
+  <meta property="og:type" content="website" />
+  <style>
+    :root {
+      --primary: #6c47ff;
+      --primary-dark: #2d0b6b;
+      --pink: #ec4899;
+      --ink: #1c1c1e;
+      --ink-soft: #6b7280;
+      --bg: #f7f7fb;
+      --card: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+    .hero {
+      background: linear-gradient(155deg, var(--primary-dark) 0%, var(--primary) 60%, var(--pink) 130%);
+      color: white;
+      padding: 80px 0 100px;
+      text-align: center;
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+    .hero h1 {
+      font-size: 56px;
+      font-weight: 900;
+      margin: 0 0 10px;
+      letter-spacing: -1px;
+    }
+    .pill-icon {
+      display: inline-block;
+      width: 88px; height: 88px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 22px;
+      line-height: 88px;
+      font-size: 50px;
+      margin-bottom: 26px;
+    }
+    .hero p {
+      font-size: 19px;
+      max-width: 600px;
+      margin: 14px auto 0;
+      color: rgba(255,255,255,0.9);
+    }
+    .founders {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 48px;
+      flex-wrap: wrap;
+    }
+    .founder { text-align: center; }
+    .founder-bubble {
+      width: 80px; height: 80px;
+      background: linear-gradient(135deg, #f59e0b, #ec4899, #8b5cf6);
+      border-radius: 50%;
+      padding: 3px;
+      margin: 0 auto 8px;
+    }
+    .founder-bubble div {
+      background: white; border-radius: 50%;
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 36px;
+    }
+    .founder strong { display: block; font-size: 14px; }
+    .founder small { color: rgba(255,255,255,0.7); font-size: 12px; }
+
+    section { padding: 64px 0; }
+    section h2 {
+      font-size: 32px;
+      font-weight: 800;
+      margin: 0 0 12px;
+      letter-spacing: -0.5px;
+    }
+    section .kicker {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .feature {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .feature .emoji { font-size: 30px; display: block; margin-bottom: 10px; }
+    .feature h3 { font-size: 15px; margin: 0 0 6px; font-weight: 800; }
+    .feature p { font-size: 13px; color: var(--ink-soft); margin: 0; line-height: 1.5; }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .stat {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .stat .num {
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--primary);
+      letter-spacing: -1px;
+      display: block;
+    }
+    .stat p { font-size: 13px; color: var(--ink); margin: 4px 0 4px; font-weight: 600; line-height: 1.4; }
+    .stat small { font-size: 11px; color: var(--ink-soft); font-style: italic; }
+
+    .privacy-block {
+      background: #e0fbe6;
+      border-radius: 18px;
+      padding: 28px;
+      margin-top: 24px;
+    }
+    .privacy-block h3 { margin: 0 0 8px; color: #166534; font-size: 18px; }
+    .privacy-block p { margin: 0; color: #166534; font-size: 14px; }
+
+    .links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+    .links a {
+      background: var(--primary);
+      color: white;
+      padding: 11px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .links a:hover { text-decoration: none; opacity: 0.92; }
+    .links a.secondary {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+
+    footer {
+      background: #0f172a;
+      color: rgba(255,255,255,0.65);
+      padding: 40px 0;
+      font-size: 13px;
+    }
+    footer a { color: rgba(255,255,255,0.85); }
+    footer .row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+    footer .legal-row {
+      margin-top: 18px; padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 12px;
+      color: rgba(255,255,255,0.45);
+    }
+    footer h4 { color: white; font-size: 13px; margin: 0 0 8px; }
+    footer ul { list-style: none; padding: 0; margin: 0; }
+    footer ul li { margin: 4px 0; }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="container">
+      <span class="pill-icon">💊</span>
+      <span class="badge">Coming soon to the App Store</span>
+      <h1>PillTime</h1>
+      <p>Built by doctors. For everyone who keeps forgetting.<br>
+      Scan a bottle. Get a reminder. Never miss a dose.</p>
+
+      <div class="founders">
+        <div class="founder">
+          <div class="founder-bubble"><div>🩺</div></div>
+          <strong>Dr. Brett Molina</strong>
+          <small>Co-Founder &amp; CEO</small>
+        </div>
+        <div class="founder">
+          <div class="founder-bubble"><div>🧬</div></div>
+          <strong>Dr. Emon Javadi</strong>
+          <small>Co-Founder &amp; CMO</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section style="background: var(--bg);">
+    <div class="container">
+      <div class="kicker">Why we built it</div>
+      <h2>Medication non-adherence kills 125,000 Americans every year.</h2>
+      <p style="font-size:17px; max-width:680px; color:var(--ink-soft); margin-top:14px;">
+        It costs the US healthcare system over $300 billion annually. It is one of the largest preventable causes of death in the country. We're two physicians who watched it happen to patients we cared about. We built PillTime to remove the friction that turns <em>"I'll do it later"</em> into <em>"I forgot."</em>
+      </p>
+
+      <div class="stats">
+        <div class="stat">
+          <span class="num">125K</span>
+          <p>Americans die each year from medication non-adherence</p>
+          <small>— Annals of Internal Medicine</small>
+        </div>
+        <div class="stat">
+          <span class="num">$300B</span>
+          <p>Annual US cost of non-adherence</p>
+          <small>— New England Healthcare Institute</small>
+        </div>
+        <div class="stat">
+          <span class="num">50%</span>
+          <p>Of chronic-disease patients miss doses in any given month</p>
+          <small>— World Health Organization</small>
+        </div>
+        <div class="stat">
+          <span class="num">Zero</span>
+          <p>PHI collected, stored, or transmitted by PillTime</p>
+          <small>— By design</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: white;">
+    <div class="container">
+      <div class="kicker">What's in the app</div>
+      <h2>A pocket pharmacist that respects your privacy.</h2>
+
+      <div class="features">
+        <div class="feature">
+          <span class="emoji">📷</span>
+          <h3>Multi-angle bottle scanner</h3>
+          <p>Curved-label aware. Takes 1–3 photos around the bottle, then asks the AI to reconcile the wrap-around text.</p>
+        </div>
+        <div class="feature">
+          <span class="emoji">🛡️</span>
+          <h3>Zero PHI by design</h3>
+          <p>The scanner is instructed never to extract your name, doctor's name, or Rx number — and we strip them on-device as a backup.</p>
+        </div>
+        <div class="feature">
+          <span class="emoji">🆓</span>
+          <h3>Free AI by default</h3>
+          <p>Defaults to Google Gemini's free tier. No credit card required to scan bottles.</p>
+        </div>
+        <div class="feature">
+          <span class="emoji">⏰</span>
+          <h3>Smart reminders</h3>
+          <p>Dose, refill (~7 days before empty), and end-of-course local notifications.</p>
+        </div>
+        <div class="feature">
+          <span class="emoji">⌚</span>
+          <h3>Apple Watch ready</h3>
+          <p>Tap ✓ Taken, Snooze 10 min, or Skip right from your wrist — without unlocking your phone.</p>
+        </div>
+        <div class="feature">
+          <span class="emoji">🔊</span>
+          <h3>Hear it pronounced</h3>
+          <p>Tap the speaker to hear any drug name spoken aloud with the right syllable stressed.</p>
+        </div>
+        <div class="feature">
+          <span class="emoji">📞</span>
+          <h3>Tap to call your pharmacy</h3>
+          <p>Phone and address parsed from the bottle. One tap calls, one tap opens Maps.</p>
+        </div>
+        <div class="feature">
+          <span class="emoji">💸</span>
+          <h3>Find savings on every drug</h3>
+          <p>Direct links to GoodRx, SingleCare, NeedyMeds, RxAssist, Medicare Plan Finder. No PillTime commission.</p>
+        </div>
+        <div class="feature">
+          <span class="emoji">📚</span>
+          <h3>Real research, not invented</h3>
+          <p>Links to NIH MedlinePlus, FDA DailyMed, PubMed, ClinicalTrials.gov, Drugs.com.</p>
+        </div>
+        <div class="feature">
+          <span class="emoji">📋</span>
+          <h3>Doctor visit summary</h3>
+          <p>One tap shares a clean, PHI-free list of every med you take — plus your adherence numbers.</p>
+        </div>
+      </div>
+
+      <div class="privacy-block">
+        <h3>🔒 No backend. No analytics. No PHI.</h3>
+        <p>Your medications, schedule, and history live only on your device. There is no PillTime server that receives or stores any of it. No ad SDKs, no analytics SDKs, no user accounts. Delete the app to delete everything.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--bg);">
+    <div class="container">
+      <div class="kicker">For health plans &amp; care partners</div>
+      <h2>Offer your members better adherence — without ever touching their PHI.</h2>
+      <ul style="font-size:15px; color:var(--ink); line-height:1.7; max-width:680px;">
+        <li>Zero-backend architecture: medication data stays on the member's phone.</li>
+        <li>Co-branding and member onboarding flows available for plans serving 100K+ lives.</li>
+        <li>Optional aggregate (de-identified) adherence reporting via member opt-in.</li>
+        <li>FHIR R4 export roadmap for SMART-on-FHIR integrations.</li>
+      </ul>
+      <div class="links">
+        <a href="mailto:partners@pilltime.app">partners@pilltime.app</a>
+        <a href="support.html" class="secondary">General support →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div>
+          <h4>PillTime</h4>
+          <p>Built by Dr. Brett Molina &amp; Dr. Emon Javadi.</p>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Use</a></li>
+            <li><a href="disclaimer.html">Medical Disclaimer</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="mailto:support@pilltime.app">support@pilltime.app</a></li>
+            <li><a href="mailto:privacy@pilltime.app">privacy@pilltime.app</a></li>
+            <li><a href="mailto:legal@pilltime.app">legal@pilltime.app</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="legal-row">
+        © 2026 PillTime. Not a medical device. Not medical advice. In an emergency, call 911 (US).
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
