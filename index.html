@@ -174,6 +174,19 @@
       color: var(--ink-soft);
       margin: 0;
     }
+    .comparison-callout {
+      margin-top: 40px;
+      padding: 24px 28px;
+      background: linear-gradient(135deg, rgba(91,45,255,0.08), rgba(139,92,246,0.05));
+      border-left: 4px solid var(--primary);
+      border-radius: 18px;
+    }
+    .comparison-callout h3 {
+      font-size: 19px;
+      font-weight: 800;
+      margin: 0 0 4px;
+      color: var(--ink);
+    }
 
     section { padding: 64px 0; }
     section h2 {
@@ -363,6 +376,85 @@
 
   <section style="background: linear-gradient(155deg, #f2f4ff 0%, #ffffff 100%);">
     <div class="container">
+      <div class="kicker">Why PillPop is different</div>
+      <h2>The medication reminder built like a doctor would build it.</h2>
+      <p style="font-size:17px; color:var(--ink-soft); max-width:680px; margin-top:14px;">
+        The category is crowded. Most apps just remind you. PillPop is the only one that treats medication entry as a safety-critical event, runs zero servers, and tells you the cheapest place to buy your meds — without taking a cut.
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-card" style="border: 2px solid var(--primary);">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #5B2DFF, #8B5CF6);">🛡️</div>
+          <h3>Physician-built bottle-match safety gate</h3>
+          <p>Before any reminder is saved, PillPop walks you through the dose strength and frequency printed on your bottle and asks you to confirm it matches what your physician prescribed. Required checkbox. No silent saves. <strong>No other reminder app does this.</strong></p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #5B2DFF, #8B5CF6);">🔒</div>
+          <h3>Zero backend. Zero data collection.</h3>
+          <p>Your medications, schedule, and dose history live only on your iPhone. There is no PillPop cloud server. No account required. No analytics SDKs. No advertising trackers. <strong>You can verify this claim. Competitors can't.</strong></p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #5B2DFF, #8B5CF6);">📷</div>
+          <h3>AI that reads the actual label</h3>
+          <p>Point your camera at any prescription, OTC, vitamin, or supplement bottle. PillPop's multimodal AI reads the drug name, dose, schedule, refill date — even on curved labels in bad light. 1-2 seconds. Most competitors require manual entry or barcode scan.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #5B2DFF, #8B5CF6);">🧪</div>
+          <h3>Three-layer PHI protection</h3>
+          <p>The scanner is explicitly instructed not to extract patient name, prescriber name, Rx number, or insurance info. We strip those fields on-device. The storage layer scrubs again before write. <strong>Three independent defenses.</strong> Marketing isn't aspirational — it's enforced in code.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #5B2DFF, #8B5CF6);">💬</div>
+          <h3>Doctor-built drug info chat</h3>
+          <p>Ask any question about your meds — side effects, what it treats, what to do if you missed a dose. Grounded in FDA + NIH sources. Never invents medical advice, always defers to your doctor. Strict guardrails. Competitors either don't have this or link out to WebMD.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #5B2DFF, #8B5CF6);">👥</div>
+          <h3>Caregiver check-ins — without sharing your meds</h3>
+          <p>Send daily adherence check-ins to up to 5 loved ones. They see your percentage. They never see what you're taking. Privacy-preserving social proof. Most "share with family" features dump your medication list to a portal.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #5B2DFF, #8B5CF6);">💸</div>
+          <h3>Savings with zero commission</h3>
+          <p>Six vetted savings sources (GoodRx, SingleCare, NeedyMeds, RxAssist, RxSaver, Medicare Plan Finder) side by side for every med you take — including patient-assistance programs that give the drug away free. <strong>We take zero commission</strong> so the curation stays honest. We point you to whichever is cheapest.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #5B2DFF, #8B5CF6);">📋</div>
+          <h3>Doctor visit summary in 30 seconds</h3>
+          <p>Hand your phone, AirDrop, email, or print a clean medication summary for any visit. Real list, real schedule, real adherence numbers. Generated on-device — no PHI sent anywhere. Most competitors either don't offer this or bury it.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #5B2DFF, #8B5CF6);">⌚</div>
+          <h3>Apple Watch — actionable from day 1</h3>
+          <p>iOS auto-mirrors PillPop notifications to your Watch. Tap ✓ Taken / Snooze / Skip right from your wrist. No separate companion app. Many competitors require a paid Watch add-on or skip Watch entirely.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #5B2DFF, #8B5CF6);">🚫</div>
+          <h3>No ads. No upsell nags. No dark patterns.</h3>
+          <p>The free tier is genuinely generous — manual entry, reminders, Watch, Drug Info chat, doctor visit summary, adherence tracking. Pro ($2.99/mo) only gates AI scanner + voice + savings + caregiver. No banner ads. No "share to unlock." No nag-screens to upgrade.</p>
+        </div>
+      </div>
+
+      <div class="comparison-callout">
+        <h3>🎯 The simple way to think about it</h3>
+        <p style="font-size:17px; line-height:1.6; color:var(--ink); margin-top:8px;">
+          <strong>Most reminder apps make money off you somehow</strong> — ads, affiliate cuts, selling de-identified data, hardware lock-in. PillPop's only revenue is a $2.99/mo Pro subscription. Nothing else leaves your phone. Nothing is sold. The privacy promise is the product.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--bg);">
+    <div class="container">
       <div class="kicker">What's new</div>
       <h2>Built for the way patients actually use it.</h2>
       <p style="font-size:17px; color:var(--ink-soft); max-width:680px; margin-top:14px;">
@@ -371,15 +463,9 @@
 
       <div class="features-grid">
         <div class="feature-card">
-          <div class="feature-icon" style="background: linear-gradient(135deg, #5B2DFF, #8B5CF6);">🛡️</div>
-          <h3>Bottle-match safety gate</h3>
-          <p>Before any reminder is created, the app walks you through the dose strength and frequency printed on your bottle and asks you to confirm it matches what your physician prescribed. Required checkbox. No silent saves. A physician-built check, so a typo doesn't become a missed dose — or the wrong one.</p>
-        </div>
-
-        <div class="feature-card">
           <div class="feature-icon" style="background: linear-gradient(135deg, #5B2DFF, #8B5CF6);">🎡</div>
           <h3>Scroll-wheel pill count</h3>
-          <p>Picking the number of pills on hand now uses a smooth scroll wheel — no keyboard typos, no fat-finger fives that should have been twos. Inspired by the dose pickers patients actually trust.</p>
+          <p>Picking the number of pills on hand now uses a smooth scroll wheel — no keyboard typos, no fat-finger fives that should have been twos.</p>
         </div>
 
         <div class="feature-card">
@@ -392,6 +478,12 @@
           <div class="feature-icon" style="background: linear-gradient(135deg, #5B2DFF, #8B5CF6);">⚡</div>
           <h3>Faster, cheaper scanner</h3>
           <p>The bottle scanner now runs on a 1–2 second AI tier with a quality fallback only when the label is genuinely tough — most bottles read instantly. No tier ever phones home with your medication.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #5B2DFF, #8B5CF6);">🩺</div>
+          <h3>Required dose + frequency</h3>
+          <p>No more silent defaults. The new flow forces you to pick the exact dose and frequency printed on your bottle — daily, twice daily, weekly, every-other-day, monthly, or as-needed. Nothing slips through.</p>
         </div>
       </div>
     </div>
