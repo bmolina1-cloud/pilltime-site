@@ -137,6 +137,43 @@
       margin: 6px auto 18px !important;
       letter-spacing: -0.3px;
     }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 36px;
+    }
+    @media (max-width: 720px) {
+      .features-grid { grid-template-columns: 1fr; }
+    }
+    .feature-card {
+      background: var(--card);
+      border-radius: 20px;
+      padding: 24px 22px;
+      box-shadow: 0 6px 24px rgba(91, 45, 255, 0.06);
+      border: 1px solid rgba(91, 45, 255, 0.06);
+    }
+    .feature-icon {
+      width: 52px; height: 52px;
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px;
+      margin-bottom: 14px;
+      color: white;
+    }
+    .feature-card h3 {
+      font-size: 18px;
+      font-weight: 800;
+      margin: 0 0 8px;
+      color: var(--ink);
+      letter-spacing: -0.2px;
+    }
+    .feature-card p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--ink-soft);
+      margin: 0;
+    }
 
     section { padding: 64px 0; }
     section h2 {
@@ -328,7 +365,7 @@
           <h3 class="founder-name">Dr. Brett Molina</h3>
           <span class="founder-credentials">MD · CO-FOUNDER</span>
           <p class="founder-bio">
-            Practicing physician and healthcare-software builder on a mission to change the face of healthcare. Brett has built and shipped two full healthcare-software companies that scaled to wildly popular adoption — and his software is currently in active use by one of the largest healthcare companies in America. In the operating room, his passion is for highly detailed, technically demanding surgeries that demand precision. That same precision is what he brings to PillTime: clinical workflow design, regulatory rigor, and the patient-side empathy that lets the app feel less like software and more like a doctor in your pocket.
+            Physician and healthcare-software builder on a mission to change the face of healthcare. Brett has built and shipped two full healthcare-software companies that scaled to wildly popular adoption — and his software is currently in active use by one of the largest healthcare companies in America. In the operating room, his passion is for highly detailed, technically demanding surgeries that demand precision. That same precision is what he brings to PillTime: clinical workflow design, regulatory rigor, and the patient-side empathy that lets the app feel less like software and more like a doctor in your pocket.
           </p>
         </div>
 
@@ -339,6 +376,42 @@
           <p class="founder-bio">
             Practicing physician with a deep focus on patient interaction and solving real-world problems patients face every day at the pharmacy counter, the bedside, and at home. Emon's passion for pharmaceuticals — and for closing the gap between what's prescribed and what's actually taken — is the clinical voice of PillTime. Every reminder, every safety check, every word of guidance was reviewed by him to make sure it's what a doctor would actually say.
           </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: linear-gradient(155deg, #f2f4ff 0%, #ffffff 100%);">
+    <div class="container">
+      <div class="kicker">What's new</div>
+      <h2>Built for the way patients actually use it.</h2>
+      <p style="font-size:17px; color:var(--ink-soft); max-width:680px; margin-top:14px;">
+        Every release is shaped by what we see in clinic. Latest:
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #5B2DFF, #8B5CF6);">🛡️</div>
+          <h3>Bottle-match safety gate</h3>
+          <p>Before any reminder is created, the app walks you through the dose strength and frequency printed on your bottle and asks you to confirm it matches what your physician prescribed. Required checkbox. No silent saves. A physician-built check, so a typo doesn't become a missed dose — or the wrong one.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #5B2DFF, #8B5CF6);">🎡</div>
+          <h3>Scroll-wheel pill count</h3>
+          <p>Picking the number of pills on hand now uses a smooth scroll wheel — no keyboard typos, no fat-finger fives that should have been twos. Inspired by the dose pickers patients actually trust.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #5B2DFF, #8B5CF6);">📈</div>
+          <h3>Your adherence at a glance</h3>
+          <p>Open History and the first thing you see is your own adherence percentage over the last 30 days, with the WHO baseline (~50% of chronic-disease patients miss doses) as context. Real motivation. Screenshot-worthy. Stays on your phone.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background: linear-gradient(135deg, #5B2DFF, #8B5CF6);">⚡</div>
+          <h3>Faster, cheaper scanner</h3>
+          <p>The bottle scanner now runs on a 1–2 second AI tier with a quality fallback only when the label is genuinely tough — most bottles read instantly. No tier ever phones home with your medication.</p>
         </div>
       </div>
     </div>
@@ -355,23 +428,23 @@
       <div class="gallery">
         <a class="shot" href="screenshots/01-home.png" target="_blank" rel="noopener">
           <img src="screenshots/01-home.png" alt="PillTime Home — Never miss a dose" />
-          <div class="caption">Never miss a dose<small>Home · next-dose timer · scan · speak · type</small></div>
+          <div class="caption">Never miss a dose<small>Home · next-dose countdown · Rx + OTC + vitamin support</small></div>
         </a>
         <a class="shot" href="screenshots/02-scan.png" target="_blank" rel="noopener">
-          <img src="screenshots/02-scan.png" alt="PillTime Scan — Snap any bottle" />
-          <div class="caption">Snap any bottle<small>Multi-angle scan · privacy-first prompts</small></div>
+          <img src="screenshots/02-scan.png" alt="PillTime — three ways to add a med" />
+          <div class="caption">Three ways to add a med<small>Scan the bottle · say it out loud · type it in</small></div>
         </a>
         <a class="shot" href="screenshots/03-info.png" target="_blank" rel="noopener">
-          <img src="screenshots/03-info.png" alt="PillTime Meds — Your meds, tracked" />
-          <div class="caption">Your meds, tracked<small>Adherence · pills-left · pronounce · savings</small></div>
+          <img src="screenshots/03-info.png" alt="PillTime Drug Info — Doctor-built AI Q&amp;A" />
+          <div class="caption">Doctor-built Q&amp;A<small>Drug info chat · grounded in FDA &amp; NIH · never a substitute for your physician</small></div>
         </a>
         <a class="shot" href="screenshots/04-about.png" target="_blank" rel="noopener">
-          <img src="screenshots/04-about.png" alt="PillTime About — The problem we're fixing" />
-          <div class="caption">The problem we're fixing<small>125K deaths · $300B cost · 50% miss doses · Zero PHI</small></div>
+          <img src="screenshots/04-about.png" alt="PillTime About — Built by doctors" />
+          <div class="caption">Built by doctors<small>125K deaths · $300B cost · 50% miss doses · Zero PHI</small></div>
         </a>
         <a class="shot" href="screenshots/05-doctor.png" target="_blank" rel="noopener">
           <img src="screenshots/05-doctor.png" alt="PillTime Doctor Visit — Hand your doctor your meds" />
-          <div class="caption">Hand your doctor your meds<small>Shareable summary · zero PHI · AirDrop/email/print</small></div>
+          <div class="caption">Doctor visit in 30 seconds<small>Shareable summary · AirDrop · email · print</small></div>
         </a>
       </div>
 
