@@ -52,11 +52,22 @@
       text-transform: uppercase;
       margin-bottom: 22px;
     }
-    .hero h1 {
-      font-size: 56px;
+    .hero h1.brand-wordmark {
+      font-size: 76px;
       font-weight: 900;
-      margin: 0 0 10px;
+      margin: 14px 0 10px;
+      letter-spacing: -2px;
+      background: linear-gradient(180deg, #ffffff 0%, #e9d8ff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero h2.hero-headline {
+      font-size: 44px;
+      font-weight: 900;
+      margin: 22px 0 6px;
       letter-spacing: -1px;
+      color: white;
     }
     .pill-icon {
       display: inline-block;
@@ -324,8 +335,9 @@
   <div class="hero">
     <div class="container">
       <span class="pill-icon">💊</span>
+      <h1 class="brand-wordmark">PillPop</h1>
       <span class="badge">Coming soon to the App Store</span>
-      <h1>Never miss a dose.</h1>
+      <h2 class="hero-headline">Never miss a dose.</h2>
       <p class="hero-tag">Peace of mind, every day.</p>
       <p>Your pocket pharmacist. Built by two physicians who got tired of watching patients miss doses they meant to take. Snap any bottle, set a smart reminder, share check-ins with the people you trust. Nothing leaves your phone.</p>
     </div>
