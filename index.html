@@ -3,15 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PillTime — Built by doctors. For everyone who keeps forgetting.</title>
-  <meta name="description" content="A zero-PHI medication reminder app. Scan a bottle, get a reminder, never miss a dose. Built by physicians. Nothing leaves your phone." />
-  <meta property="og:title" content="PillTime" />
-  <meta property="og:description" content="Built by doctors. Zero PHI. Nothing leaves your phone." />
+  <title>PillTime — Never miss a dose. Peace of mind, every day.</title>
+  <meta name="description" content="PillTime is a privacy-first medication reminder built by two physicians. Scan any bottle, get smart reminders, share check-ins with loved ones — all 100% private. Nothing leaves your phone." />
+  <meta property="og:title" content="PillTime — your pocket pharmacist" />
+  <meta property="og:description" content="Never miss a dose. Peace of mind, every day. Built by doctors. 100% private." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pilltimeapp.com" />
+  <link rel="canonical" href="https://pilltimeapp.com/" />
   <style>
     :root {
-      --primary: #6c47ff;
+      --primary: #5B2DFF;
       --primary-dark: #2d0b6b;
+      --primary-soft: #8B5CF6;
       --pink: #ec4899;
       --ink: #1c1c1e;
       --ink-soft: #6b7280;
@@ -71,29 +74,69 @@
       margin: 14px auto 0;
       color: rgba(255,255,255,0.9);
     }
-    .founders {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      margin-top: 48px;
-      flex-wrap: wrap;
+    .founders-section {
+      background: linear-gradient(155deg, #f2f4ff 0%, #ffffff 100%);
     }
-    .founder { text-align: center; }
+    .founders-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-top: 36px;
+    }
+    @media (max-width: 720px) {
+      .founders-grid { grid-template-columns: 1fr; }
+    }
+    .founder-card {
+      background: var(--card);
+      border-radius: 24px;
+      padding: 28px 24px;
+      box-shadow: 0 8px 32px rgba(91, 45, 255, 0.08);
+      border: 1px solid rgba(91, 45, 255, 0.08);
+    }
     .founder-bubble {
-      width: 80px; height: 80px;
-      background: linear-gradient(135deg, #f59e0b, #ec4899, #8b5cf6);
-      border-radius: 50%;
+      width: 84px; height: 84px;
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary), var(--primary-soft));
+      border-radius: 26px;
       padding: 3px;
-      margin: 0 auto 8px;
+      margin: 0 0 16px;
     }
     .founder-bubble div {
-      background: white; border-radius: 50%;
+      background: white; border-radius: 23px;
       width: 100%; height: 100%;
       display: flex; align-items: center; justify-content: center;
       font-size: 36px;
     }
-    .founder strong { display: block; font-size: 14px; }
-    .founder small { color: rgba(255,255,255,0.7); font-size: 12px; }
+    .founder-name {
+      font-size: 22px;
+      font-weight: 900;
+      margin: 0 0 4px;
+      color: var(--ink);
+      letter-spacing: -0.3px;
+    }
+    .founder-credentials {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      color: var(--primary);
+      background: rgba(91, 45, 255, 0.08);
+      padding: 3px 8px;
+      border-radius: 6px;
+      margin-bottom: 14px;
+    }
+    .founder-bio {
+      font-size: 15.5px;
+      color: var(--ink-soft);
+      line-height: 1.65;
+      margin: 0;
+    }
+    .hero-tag {
+      font-size: 22px !important;
+      font-weight: 800 !important;
+      color: rgba(255, 255, 255, 0.95) !important;
+      margin: 6px auto 18px !important;
+      letter-spacing: -0.3px;
+    }
 
     section { padding: 64px 0; }
     section h2 {
@@ -232,9 +275,9 @@
     <div class="container">
       <span class="pill-icon">💊</span>
       <span class="badge">Coming soon to the App Store</span>
-      <h1>PillTime</h1>
-      <p>Built by doctors. For everyone who keeps forgetting.<br>
-      Scan a bottle. Get a reminder. Never miss a dose.</p>
+      <h1>Never miss a dose.</h1>
+      <p class="hero-tag">Peace of mind, every day.</p>
+      <p>Your pocket pharmacist. Built by two physicians who got tired of watching patients miss doses they meant to take. Snap any bottle, set a smart reminder, share check-ins with the people you trust. Nothing leaves your phone.</p>
     </div>
   </div>
 
@@ -266,6 +309,36 @@
           <span class="num">Zero</span>
           <p>PHI collected, stored, or transmitted by PillTime</p>
           <small>— By design</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="founders-section">
+    <div class="container">
+      <div class="kicker">Built by doctors</div>
+      <h2>The team behind PillTime.</h2>
+      <p style="font-size:17px; color:var(--ink-soft); max-width:680px; margin-top:14px;">
+        Two practicing physicians who decided medication non-adherence shouldn't be the #1 preventable cause of death in this country.
+      </p>
+
+      <div class="founders-grid">
+        <div class="founder-card">
+          <div class="founder-bubble"><div>🩺</div></div>
+          <h3 class="founder-name">Dr. Brett Molina</h3>
+          <span class="founder-credentials">MD · CO-FOUNDER</span>
+          <p class="founder-bio">
+            Practicing physician and healthcare-software builder on a mission to change the face of healthcare. Brett has built and shipped two full healthcare-software companies that scaled to wildly popular adoption — bringing deep operating experience in clinical workflow design, regulatory navigation, and product. He brings the engineering rigor and the patient-side empathy that lets PillTime feel less like an app and more like a doctor in your pocket.
+          </p>
+        </div>
+
+        <div class="founder-card">
+          <div class="founder-bubble"><div>🧬</div></div>
+          <h3 class="founder-name">Dr. Emon Javadi</h3>
+          <span class="founder-credentials">MD · CO-FOUNDER</span>
+          <p class="founder-bio">
+            Practicing physician with a deep focus on patient interaction and solving real-world problems patients face every day at the pharmacy counter, the bedside, and at home. Emon's passion for pharmaceuticals — and for closing the gap between what's prescribed and what's actually taken — is the clinical voice of PillTime. Every reminder, every safety check, every word of guidance was reviewed by him to make sure it's what a doctor would actually say.
+          </p>
         </div>
       </div>
     </div>
@@ -401,7 +474,7 @@
       <div class="row">
         <div>
           <h4>PillTime</h4>
-          <p>Built by Dr. Molina &amp; Dr. Javadi.</p>
+          <p>Built by Dr. Brett Molina &amp; Dr. Emon Javadi.<br>Because your health deserves more.</p>
         </div>
         <div>
           <h4>Legal</h4>
