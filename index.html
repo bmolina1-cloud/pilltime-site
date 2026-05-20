@@ -69,6 +69,25 @@
       letter-spacing: -1px;
       color: white;
     }
+    .founder-credit {
+      font-size: 15px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.92);
+      letter-spacing: 0.4px;
+      margin: 0 0 16px;
+      text-transform: none;
+    }
+    .badge-live {
+      background: linear-gradient(135deg, #22c55e, #16a34a) !important;
+      border: 1px solid rgba(255,255,255,0.4) !important;
+      text-decoration: none !important;
+      transition: transform 0.15s ease;
+      cursor: pointer;
+    }
+    .badge-live:hover {
+      transform: translateY(-1px);
+      text-decoration: none !important;
+    }
     .pill-icon {
       display: inline-block;
       width: 88px; height: 88px;
@@ -336,7 +355,10 @@
     <div class="container">
       <span class="pill-icon">💊</span>
       <h1 class="brand-wordmark">PillPop</h1>
-      <span class="badge">Coming soon to the App Store</span>
+      <p class="founder-credit">Built by Dr. Molina, MD &amp; Dr. Javadi, MD</p>
+      <a class="badge badge-live" href="https://apps.apple.com/us/app/pillpop-health/id6770281616" target="_blank" rel="noopener">
+        ✓ Now on the App Store
+      </a>
       <h2 class="hero-headline">Never miss a dose.</h2>
       <p class="hero-tag">Peace of mind, every day.</p>
       <p>Your pocket pharmacist. Built by two physicians who got tired of watching patients miss doses they meant to take. Snap any bottle, set a smart reminder, share check-ins with the people you trust. Nothing leaves your phone.</p>
